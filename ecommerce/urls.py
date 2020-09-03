@@ -1,10 +1,10 @@
+from django.urls import path
 
-from django.contrib import admin
-from django.urls import path, include
+from . import views
 
 urlpatterns = [
-	path('api/', include('sistema_login_cadastro.urls')),
-    path('admin/', admin.site.urls),
-    path('accounts/', include('django.contrib.auth.urls')),
-    
+    path('', views.index, name='index'),
+    path('login/',views.logar, name='login'),
+    path('login/index',views.index, name='index'),
+	path('cadastro/', views.cadastrar, name='cadastro')
 ]
